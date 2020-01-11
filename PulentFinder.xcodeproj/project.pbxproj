@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B27D2566E324D3078DA3CA1 /* Pods_PulentFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BCC47A9C6C9BA8EE119BF33 /* Pods_PulentFinderTests.framework */; };
+		EED155F8AEE599FE3BB5D2A0 /* Pods_PulentFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047DD50CBF11DD0E856C40A8 /* Pods_PulentFinder.framework */; };
+		F82714D923CA89C90025EF14 /* SearchAlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82714D823CA89C90025EF14 /* SearchAlbumService.swift */; };
 		F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466623CA7F4400611C4E /* AppDelegate.swift */; };
 		F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466823CA7F4400611C4E /* SceneDelegate.swift */; };
 		F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466A23CA7F4400611C4E /* ViewController.swift */; };
@@ -18,6 +21,7 @@
 		F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */; };
 		F8D9469223CA87A400611C4E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
 		F8D9469523CA87ED00611C4E /* AlbumMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* AlbumMapping.swift */; };
+		F8D9469723CA88B900611C4E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F8D9469623CA88B900611C4E /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047DD50CBF11DD0E856C40A8 /* Pods_PulentFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulentFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		107534D1E794F665D37034BC /* Pods-PulentFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulentFinderTests.release.xcconfig"; path = "Target Support Files/Pods-PulentFinderTests/Pods-PulentFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		6BCC47A9C6C9BA8EE119BF33 /* Pods_PulentFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PulentFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		823DBC2E869A7F0CEF03837F /* Pods-PulentFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulentFinder.release.xcconfig"; path = "Target Support Files/Pods-PulentFinder/Pods-PulentFinder.release.xcconfig"; sourceTree = "<group>"; };
+		8D01905B9D5DA3D110EDE797 /* Pods-PulentFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulentFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-PulentFinderTests/Pods-PulentFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93E502AB28F28E4C89A7E626 /* Pods-PulentFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PulentFinder.debug.xcconfig"; path = "Target Support Files/Pods-PulentFinder/Pods-PulentFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		F82714D823CA89C90025EF14 /* SearchAlbumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAlbumService.swift; sourceTree = "<group>"; };
 		F8D9466323CA7F4400611C4E /* PulentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D9466623CA7F4400611C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D9466823CA7F4400611C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +57,7 @@
 		F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSearchVC.xib; sourceTree = "<group>"; };
 		F8D9469123CA87A400611C4E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F8D9469423CA87ED00611C4E /* AlbumMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapping.swift; sourceTree = "<group>"; };
+		F8D9469623CA88B900611C4E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED155F8AEE599FE3BB5D2A0 /* Pods_PulentFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,18 +73,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B27D2566E324D3078DA3CA1 /* Pods_PulentFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A2AEE4095818C780E959EEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				047DD50CBF11DD0E856C40A8 /* Pods_PulentFinder.framework */,
+				6BCC47A9C6C9BA8EE119BF33 /* Pods_PulentFinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7BE3F96ABEB339CA39D3566 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93E502AB28F28E4C89A7E626 /* Pods-PulentFinder.debug.xcconfig */,
+				823DBC2E869A7F0CEF03837F /* Pods-PulentFinder.release.xcconfig */,
+				8D01905B9D5DA3D110EDE797 /* Pods-PulentFinderTests.debug.xcconfig */,
+				107534D1E794F665D37034BC /* Pods-PulentFinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F82714D723CA89960025EF14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F82714D823CA89C90025EF14 /* SearchAlbumService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F8D9465A23CA7F4400611C4E = {
 			isa = PBXGroup;
 			children = (
+				F8D9469623CA88B900611C4E /* Podfile */,
 				F8D9466523CA7F4400611C4E /* PulentFinder */,
 				F8D9467C23CA7F4700611C4E /* PulentFinderTests */,
 				F8D9466423CA7F4400611C4E /* Products */,
+				D7BE3F96ABEB339CA39D3566 /* Pods */,
+				3A2AEE4095818C780E959EEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +132,7 @@
 		F8D9466523CA7F4400611C4E /* PulentFinder */ = {
 			isa = PBXGroup;
 			children = (
+				F82714D723CA89960025EF14 /* Services */,
 				F8D9468E23CA875E00611C4E /* Models */,
 				F8D9468823CA857200611C4E /* ViewControllers */,
 				F8D9466623CA7F4400611C4E /* AppDelegate.swift */,
@@ -158,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8D9468223CA7F4700611C4E /* Build configuration list for PBXNativeTarget "PulentFinder" */;
 			buildPhases = (
+				2EFAEBA3053A40A4E4B967CA /* [CP] Check Pods Manifest.lock */,
 				F8D9465F23CA7F4400611C4E /* Sources */,
 				F8D9466023CA7F4400611C4E /* Frameworks */,
 				F8D9466123CA7F4400611C4E /* Resources */,
+				EB5B2227DEC7181D611237CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8D9468523CA7F4700611C4E /* Build configuration list for PBXNativeTarget "PulentFinderTests" */;
 			buildPhases = (
+				AE83E905764BE187C9BB51F8 /* [CP] Check Pods Manifest.lock */,
 				F8D9467523CA7F4700611C4E /* Sources */,
 				F8D9467623CA7F4700611C4E /* Frameworks */,
 				F8D9467723CA7F4700611C4E /* Resources */,
@@ -232,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D9469723CA88B900611C4E /* Podfile in Resources */,
 				F8D9467323CA7F4700611C4E /* LaunchScreen.storyboard in Resources */,
 				F8D9467023CA7F4700611C4E /* Assets.xcassets in Resources */,
 				F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */,
@@ -248,6 +298,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EFAEBA3053A40A4E4B967CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulentFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE83E905764BE187C9BB51F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PulentFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB5B2227DEC7181D611237CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulentFinder/Pods-PulentFinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PulentFinder/Pods-PulentFinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PulentFinder/Pods-PulentFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F8D9465F23CA7F4400611C4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -257,6 +371,7 @@
 				F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */,
 				F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */,
 				F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */,
+				F82714D923CA89C90025EF14 /* SearchAlbumService.swift in Sources */,
 				F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */,
 				F8D9469223CA87A400611C4E /* Album.swift in Sources */,
 			);
@@ -416,6 +531,7 @@
 		};
 		F8D9468323CA7F4700611C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E502AB28F28E4C89A7E626 /* Pods-PulentFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -434,6 +550,7 @@
 		};
 		F8D9468423CA7F4700611C4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 823DBC2E869A7F0CEF03837F /* Pods-PulentFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +569,7 @@
 		};
 		F8D9468623CA7F4700611C4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D01905B9D5DA3D110EDE797 /* Pods-PulentFinderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -474,6 +592,7 @@
 		};
 		F8D9468723CA7F4700611C4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 107534D1E794F665D37034BC /* Pods-PulentFinderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
