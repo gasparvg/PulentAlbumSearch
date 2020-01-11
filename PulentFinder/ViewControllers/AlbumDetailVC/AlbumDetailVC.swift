@@ -10,6 +10,9 @@ import UIKit
 
 class AlbumDetailVC: UIViewController {
 
+    
+    var albumDetail:Album! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -32,6 +32,14 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.view.addSubview(indicator)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let albumDetailVC = AlbumDetailVC()
+        albumDetailVC.albumDetail = self.albums[indexPath.row]
+        self.navigationController?.pushViewController(albumDetailVC, animated: true)
+        searchbar.resignFirstResponder()
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
