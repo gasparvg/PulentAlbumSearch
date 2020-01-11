@@ -16,6 +16,8 @@
 		F8D9467E23CA7F4700611C4E /* PulentFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9467D23CA7F4700611C4E /* PulentFinderTests.swift */; };
 		F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9468A23CA859A00611C4E /* AlbumSearchVC.swift */; };
 		F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */; };
+		F8D9469223CA87A400611C4E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
+		F8D9469523CA87ED00611C4E /* AlbumMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* AlbumMapping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		F8D9467F23CA7F4700611C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D9468A23CA859A00611C4E /* AlbumSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchVC.swift; sourceTree = "<group>"; };
 		F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSearchVC.xib; sourceTree = "<group>"; };
+		F8D9469123CA87A400611C4E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		F8D9469423CA87ED00611C4E /* AlbumMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapping.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		F8D9466523CA7F4400611C4E /* PulentFinder */ = {
 			isa = PBXGroup;
 			children = (
+				F8D9468E23CA875E00611C4E /* Models */,
 				F8D9468823CA857200611C4E /* ViewControllers */,
 				F8D9466623CA7F4400611C4E /* AppDelegate.swift */,
 				F8D9466823CA7F4400611C4E /* SceneDelegate.swift */,
@@ -119,6 +124,31 @@
 				F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */,
 			);
 			path = AlbumSearchVC;
+			sourceTree = "<group>";
+		};
+		F8D9468E23CA875E00611C4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F8D9469023CA877800611C4E /* EntityMapping */,
+				F8D9468F23CA876F00611C4E /* Entity */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F8D9468F23CA876F00611C4E /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F8D9469123CA87A400611C4E /* Album.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F8D9469023CA877800611C4E /* EntityMapping */ = {
+			isa = PBXGroup;
+			children = (
+				F8D9469423CA87ED00611C4E /* AlbumMapping.swift */,
+			);
+			path = EntityMapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +253,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D9469523CA87ED00611C4E /* AlbumMapping.swift in Sources */,
 				F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */,
 				F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */,
 				F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */,
 				F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */,
+				F8D9469223CA87A400611C4E /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
