@@ -16,6 +16,7 @@ class SearchAlbumService{
     
     public static func searchAlbumWithName(withName name: String?, withPage page:String?, _ completion: @escaping (_ success: Bool, _ result: Array<Any>?, _ error: Error?) -> ()){
     
+        
         let linkPart1 = "https://itunes.apple.com/search?term=in+"
         let linkPart2 = "&mediaType=music&limit="
         

@@ -11,13 +11,15 @@ import AVKit
 
 class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate,UISearchDisplayDelegate,UISearchBarDelegate {
     
+    @IBOutlet weak var initialTextView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     var indicator = UIActivityIndicatorView()
     var player : AVPlayer?
     var pagination = 20
     var didUserDeleteChar = false
-    
+    var hideShowMore = true
+    var isHiddenInitialText = true
     
     var albums:Array<Album> = []
     
@@ -60,7 +62,13 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-          return 2
+          
+        if hideShowMore != true{
+            
+            return 2
+        }
+        
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,21 +88,25 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
-        guard section == 1 else { return nil }
+        if hideShowMore != true{
+           
+            guard section == 1 else { return nil }
 
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44.0))
-        let doneButton = UIButton(frame: CGRect(x: 0, y: 5, width: 130, height: 34.0))
-        // here is what you should add:
-        doneButton.center = footerView.center
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44.0))
+            let doneButton = UIButton(frame: CGRect(x: 0, y: 5, width: 130, height: 34.0))
+            // here is what you should add:
+            doneButton.center = footerView.center
 
-        doneButton.setTitle("Mostrar mas", for: .normal)
-        doneButton.backgroundColor = .lightGray
-        doneButton.layer.cornerRadius = 10.0
-        //doneButton.shadow = true
-        //doneButton.addTarget(self, action: #selector(hello(sender:)), for: .touchUpInside)
-        footerView.addSubview(doneButton)
-
-        return footerView
+            doneButton.setTitle("Mostrar mas", for: .normal)
+            doneButton.backgroundColor = .lightGray
+            doneButton.layer.cornerRadius = 10.0
+            //doneButton.shadow = true
+            //doneButton.addTarget(self, action: #selector(hello(sender:)), for: .touchUpInside)
+            footerView.addSubview(doneButton)
+            return footerView
+        }
+        
+        return nil
     }
     
     //MARK: configure
@@ -124,21 +136,24 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func searchAlbums(withName name: String,withPage page: String){
         
-        SearchAlbumService.searchAlbumWithName(withName: name, withPage: page){ (success, result, error) in
-        
-            self.indicator.startAnimating()
-            self.indicator.backgroundColor = UIColor.lightGray
+        if name.last != " " {
             
-            if success && error == nil {
-             
-                self.albums =  AlbumMapping.getAlbums(fromJson:result ?? [])
-                self.tableView.reloadData()
-                self.indicator.stopAnimating()
-                self.indicator.hidesWhenStopped = true
-            }else{
+            SearchAlbumService.searchAlbumWithName(withName:GeneralHelpers.replaceSpaces(forTextSearch: name), withPage: page){ (success, result, error) in
             
-            }
-         }
+                self.indicator.startAnimating()
+                self.indicator.backgroundColor = UIColor.lightGray
+                
+                if success && error == nil {
+                 
+                    self.albums =  AlbumMapping.getAlbums(fromJson:result ?? [])
+                    self.tableView.reloadData()
+                    self.indicator.stopAnimating()
+                    self.indicator.hidesWhenStopped = true
+                }else{
+                
+                }
+             }
+        }
     }
     
     //MARK: Searchbar
@@ -154,7 +169,17 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
+        if searchBar.text == ""{
+            
+            isHiddenInitialText = false
+            
+        }
+        else{
+            
+            isHiddenInitialText = true
+        }
         
+        self.initialTextView.isHidden = isHiddenInitialText
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -190,6 +215,9 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewDidLoad() {
        
        super.viewDidLoad()
+       
+       self.initialTextView.isHidden = isHiddenInitialText
+       self.navigationController?.navigationBar.isHidden = true
        configureTableView()
        activityIndicatorConfiguration()
     }

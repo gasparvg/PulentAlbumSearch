@@ -14,6 +14,7 @@
 		F82714DF23CA8D450025EF14 /* AlbumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82714DD23CA8D450025EF14 /* AlbumTableViewCell.xib */; };
 		F82714E323CA90B00025EF14 /* AlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82714E123CA90B00025EF14 /* AlbumDetailVC.swift */; };
 		F82714E423CA90B00025EF14 /* AlbumDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82714E223CA90B00025EF14 /* AlbumDetailVC.xib */; };
+		F8D6BA3323CABFF7004FA543 /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */; };
 		F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466623CA7F4400611C4E /* AppDelegate.swift */; };
 		F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466823CA7F4400611C4E /* SceneDelegate.swift */; };
 		F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466A23CA7F4400611C4E /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 		F82714DD23CA8D450025EF14 /* AlbumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableViewCell.xib; sourceTree = "<group>"; };
 		F82714E123CA90B00025EF14 /* AlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailVC.swift; sourceTree = "<group>"; };
 		F82714E223CA90B00025EF14 /* AlbumDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumDetailVC.xib; sourceTree = "<group>"; };
+		F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelpers.swift; sourceTree = "<group>"; };
 		F8D9466323CA7F4400611C4E /* PulentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D9466623CA7F4400611C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D9466823CA7F4400611C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = AlbumDetailVC;
 			sourceTree = "<group>";
 		};
+		F8D6BA3123CABFE2004FA543 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F8D9465A23CA7F4400611C4E = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		F8D9466523CA7F4400611C4E /* PulentFinder */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6BA3123CABFE2004FA543 /* Helpers */,
 				F82714DA23CA8CF50025EF14 /* Views */,
 				F82714D723CA89960025EF14 /* Services */,
 				F8D9468E23CA875E00611C4E /* Models */,
@@ -411,6 +422,7 @@
 				F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */,
 				F82714E323CA90B00025EF14 /* AlbumDetailVC.swift in Sources */,
 				F82714D923CA89C90025EF14 /* SearchAlbumService.swift in Sources */,
+				F8D6BA3323CABFF7004FA543 /* GeneralHelpers.swift in Sources */,
 				F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */,
 				F8D9469223CA87A400611C4E /* Album.swift in Sources */,
 				F82714DE23CA8D450025EF14 /* AlbumTableViewCell.swift in Sources */,

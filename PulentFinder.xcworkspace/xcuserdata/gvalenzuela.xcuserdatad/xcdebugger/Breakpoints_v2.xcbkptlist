@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "39792083-570A-4383-A5E8-F2195B486BF7"
+            uuid = "0A708474-595C-4000-8661-367640E52AD0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PulentFinder/ViewControllers/AlbumDetailVC/AlbumDetailVC.swift"
+            filePath = "PulentFinder/ViewControllers/AlbumSearchVC/AlbumSearchVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "config100x100Image()"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "searchAlbums(withName:withPage:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
