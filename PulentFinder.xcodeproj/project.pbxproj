@@ -17,13 +17,15 @@
 		F8D6BA3323CABFF7004FA543 /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */; };
 		F8D6BA3723CB5C60004FA543 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3523CB5C60004FA543 /* TrackTableViewCell.swift */; };
 		F8D6BA3823CB5C60004FA543 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */; };
+		F8D6BA3C23CBDA81004FA543 /* PulentFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3B23CBDA81004FA543 /* PulentFinderTests.swift */; };
+		F8D6BA3E23CBDCF9004FA543 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
+		F8D6BA3F23CBDD00004FA543 /* AlbumMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* AlbumMapping.swift */; };
 		F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466623CA7F4400611C4E /* AppDelegate.swift */; };
 		F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466823CA7F4400611C4E /* SceneDelegate.swift */; };
 		F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466A23CA7F4400611C4E /* ViewController.swift */; };
 		F8D9466E23CA7F4400611C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D9466C23CA7F4400611C4E /* Main.storyboard */; };
 		F8D9467023CA7F4700611C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D9466F23CA7F4700611C4E /* Assets.xcassets */; };
 		F8D9467323CA7F4700611C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D9467123CA7F4700611C4E /* LaunchScreen.storyboard */; };
-		F8D9467E23CA7F4700611C4E /* PulentFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9467D23CA7F4700611C4E /* PulentFinderTests.swift */; };
 		F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9468A23CA859A00611C4E /* AlbumSearchVC.swift */; };
 		F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */; };
 		F8D9469223CA87A400611C4E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
@@ -56,6 +58,7 @@
 		F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelpers.swift; sourceTree = "<group>"; };
 		F8D6BA3523CB5C60004FA543 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
+		F8D6BA3B23CBDA81004FA543 /* PulentFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulentFinderTests.swift; sourceTree = "<group>"; };
 		F8D9466323CA7F4400611C4E /* PulentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D9466623CA7F4400611C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D9466823CA7F4400611C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		F8D9465A23CA7F4400611C4E = {
 			isa = PBXGroup;
 			children = (
+				F8D6BA3B23CBDA81004FA543 /* PulentFinderTests.swift */,
 				F8D9469623CA88B900611C4E /* Podfile */,
 				F8D9466523CA7F4400611C4E /* PulentFinder */,
 				F8D9467C23CA7F4700611C4E /* PulentFinderTests */,
@@ -449,7 +453,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D9467E23CA7F4700611C4E /* PulentFinderTests.swift in Sources */,
+				F8D6BA3F23CBDD00004FA543 /* AlbumMapping.swift in Sources */,
+				F8D6BA3C23CBDA81004FA543 /* PulentFinderTests.swift in Sources */,
+				F8D6BA3E23CBDCF9004FA543 /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

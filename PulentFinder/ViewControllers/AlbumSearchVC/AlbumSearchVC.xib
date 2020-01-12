@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,19 +17,19 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="UgW-oh-7vb">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ja0-9B-6zU">
-                    <rect key="frame" x="0.0" y="56" width="320" height="464"/>
+                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="mSg-Zy-8w4"/>
                         <outlet property="delegate" destination="-1" id="YeE-sK-6JU"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" barStyle="black" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVu-US-Pcu">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                <searchBar contentMode="redraw" verticalCompressionResistancePriority="751" barStyle="black" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVu-US-Pcu">
+                    <rect key="frame" x="0.0" y="32" width="414" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="barTintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -44,16 +44,16 @@
                     </connections>
                 </searchBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csl-vX-sah" userLabel="InitialTextview">
-                    <rect key="frame" x="0.0" y="156" width="320" height="105"/>
+                    <rect key="frame" x="0.0" y="386" width="414" height="84.333333333333314"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escribe para encontrar el album que buscas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je3-Ex-GoQ">
-                            <rect key="frame" x="48" y="32" width="224" height="41"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Escribe el nombre de una canción" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je3-Ex-GoQ">
+                            <rect key="frame" x="48" y="32" width="318" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="je3-Ex-GoQ" firstAttribute="top" secondItem="Csl-vX-sah" secondAttribute="top" constant="32" id="64z-AU-lT0"/>
                         <constraint firstItem="je3-Ex-GoQ" firstAttribute="leading" secondItem="Csl-vX-sah" secondAttribute="leading" constant="48" id="Hbl-I1-qnD"/>
@@ -64,16 +64,16 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Csl-vX-sah" firstAttribute="top" secondItem="rVu-US-Pcu" secondAttribute="bottom" constant="100" id="1Vw-C3-G6n"/>
                 <constraint firstItem="ja0-9B-6zU" firstAttribute="width" secondItem="UgW-oh-7vb" secondAttribute="width" id="AmU-2n-JaA"/>
                 <constraint firstItem="Csl-vX-sah" firstAttribute="centerX" secondItem="ja0-9B-6zU" secondAttribute="centerX" id="DdT-ZQ-ofq"/>
                 <constraint firstItem="ja0-9B-6zU" firstAttribute="top" secondItem="rVu-US-Pcu" secondAttribute="bottom" id="M8n-Qz-k2A"/>
                 <constraint firstItem="rVu-US-Pcu" firstAttribute="centerX" secondItem="ZDz-G2-iMe" secondAttribute="centerX" id="MCO-RW-dPG"/>
                 <constraint firstItem="rVu-US-Pcu" firstAttribute="width" secondItem="UgW-oh-7vb" secondAttribute="width" id="OCd-Mn-qg2"/>
+                <constraint firstAttribute="bottom" secondItem="ja0-9B-6zU" secondAttribute="bottom" id="YaT-p4-P2l"/>
                 <constraint firstItem="Csl-vX-sah" firstAttribute="width" secondItem="ja0-9B-6zU" secondAttribute="width" id="dIC-5v-zhM"/>
-                <constraint firstItem="ja0-9B-6zU" firstAttribute="bottom" secondItem="ZDz-G2-iMe" secondAttribute="bottom" constant="40" id="p22-2s-B5j"/>
+                <constraint firstItem="Csl-vX-sah" firstAttribute="centerY" secondItem="ja0-9B-6zU" secondAttribute="centerY" constant="-64" id="nim-T2-kvH"/>
                 <constraint firstItem="ja0-9B-6zU" firstAttribute="centerX" secondItem="ZDz-G2-iMe" secondAttribute="centerX" id="t7j-qe-g04"/>
-                <constraint firstItem="ZDz-G2-iMe" firstAttribute="top" secondItem="rVu-US-Pcu" secondAttribute="top" id="ugR-aJ-cbY"/>
+                <constraint firstAttribute="top" secondItem="rVu-US-Pcu" secondAttribute="top" constant="-32" id="ugR-aJ-cbY"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZDz-G2-iMe"/>
             <point key="canvasLocation" x="12" y="709.35960591133005"/>

@@ -10,13 +10,27 @@ import Foundation
 
 class AlbumMapping{
 
-    public static func getAlbums(fromJson json:Array<Any>) -> Array<Track>{
+    public static func getAlbums(fromJson json:Array<Any>, byCollectionId collectionId:String?) -> Array<Track>{
         
         var albums:Array<Track> = []
         for item in json {
            
+            
            let album = Track.init(withJson: item as! NSDictionary)
-            albums.append(album)
+            
+            if album.kind != nil && album.kind != "" && album.kind == "song"{
+            
+                albums.append(album)
+            }
+        }
+      
+        //Filtramos las canciones por Album en caso de que venga un collectionId específico
+        if collectionId != nil{
+            
+            let filtered = albums.filter { $0.collectionId!.contains(collectionId ?? "") }
+            filtered.forEach { print($0) }
+            
+            return filtered
         }
         
         return albums

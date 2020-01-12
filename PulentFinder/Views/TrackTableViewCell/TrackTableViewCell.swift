@@ -26,10 +26,19 @@ class TrackTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(withTrack track:Track) {
+    func configureCell(withTrack track:Track,withSelectConfiguration value:Bool?) {
            
            self.trackNameLabel.text = track.trackName
            self.artistNameLabel.text = track.artistName
-       }
+        
+        if value == true{
+            
+            self.trackNameLabel.textColor = UIColor.green
+        }
+        else{
+            
+            self.trackNameLabel.textColor = UIColor.white
+        }
+    }
     
 }

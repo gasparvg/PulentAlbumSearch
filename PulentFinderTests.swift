@@ -2,20 +2,23 @@
 //  PulentFinderTests.swift
 //  PulentFinderTests
 //
-//  Created by Gaspar Valenzuela on 11-01-20.
+//  Created by Gaspar Valenzuela on 12-01-20.
 //  Copyright © 2020 Gaspar Valenzuela. All rights reserved.
 //
 
 import XCTest
-@testable import PulentFinder
-
+@testable import PulentFinderTests
 
 class PulentFinderTests: XCTestCase {
 
-    
     var track:Track!
+    
     override func setUp() {
+        
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        
     }
 
     override func tearDown() {

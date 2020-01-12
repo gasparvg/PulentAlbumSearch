@@ -23,6 +23,14 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     //MARK: - TableView
     
+   
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        if targetContentOffset.pointee.y > scrollView.contentOffset.y {
+             searchbar.resignFirstResponder()
+        }
+    }
+    
     func activityIndicatorConfiguration() {
         
         indicator = UIActivityIndicatorView(frame: CGRect(x: self.view.center.x, y: self.view.center.y, width: 40, height: 40))
@@ -36,8 +44,10 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         let albumDetailVC = AlbumDetailVC()
         albumDetailVC.albumDetail = self.albums[indexPath.row]
+        
         searchbar.resignFirstResponder()
         self.navigationController?.present(albumDetailVC, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(albumDetailVC, animated: true)
         
         
     }
@@ -75,12 +85,11 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         if indexPath.section == 0{
             
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AlbumCell") as! AlbumTableViewCell
-                   //cell.configureCell(withAlbum:self.usersData.serverArray[indexPath.row] as! UserDM)
                    cell.configureCell(withTrack: self.albums[indexPath.row])
                    return cell
         }
         
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        let cell : UITableViewCell = UITableViewCell(style:UITableViewCell.CellStyle.subtitle, reuseIdentifier:"cell")
         return cell
     }
     
@@ -92,20 +101,23 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             guard section == 1 else { return nil }
 
             let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44.0))
-            let doneButton = UIButton(frame: CGRect(x: 0, y: 5, width: 130, height: 34.0))
-            // here is what you should add:
-            doneButton.center = footerView.center
-
-            doneButton.setTitle("Mostrar mas", for: .normal)
-            doneButton.backgroundColor = .lightGray
-            doneButton.layer.cornerRadius = 10.0
-            //doneButton.shadow = true
-            //doneButton.addTarget(self, action: #selector(hello(sender:)), for: .touchUpInside)
-            footerView.addSubview(doneButton)
+            let showMoreButton = UIButton(frame: CGRect(x: 0, y: 5, width: 130, height: 34.0))
+            showMoreButton.center = footerView.center
+            showMoreButton.setTitle("Mostrar mas", for: .normal)
+            showMoreButton.backgroundColor = .lightGray
+            showMoreButton.layer.cornerRadius = 10.0
+            showMoreButton.addTarget(self, action: #selector(showMore(sender:)), for: .touchUpInside)
+            footerView.addSubview(showMoreButton)
             return footerView
         }
         
         return nil
+    }
+    
+    @objc func showMore(sender:UIButton){
+        
+        evaluatePaginationFactor()
+        searchAlbums(withName: searchbar.text ?? "", withPage: String(pagination))
     }
     
     //MARK: configure
@@ -130,6 +142,10 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             pagination = 20
         }
+        else{
+            
+            pagination+=20
+        }
     }
     
     func addMorePressed(){
@@ -142,17 +158,21 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         if name.last != " " {
             
+            hideShowMore = true
+            self.tableView.reloadData()
             SearchAlbumService.searchAlbumWithName(withName:GeneralHelpers.replaceSpaces(forTextSearch: name), withPage: page){ (success, result, error) in
             
-                self.indicator.startAnimating()
-                self.indicator.backgroundColor = UIColor.lightGray
+                //self.indicator.startAnimating()
+                //self.indicator.backgroundColor = UIColor.lightGray
                 
                 if success && error == nil {
                  
-                    self.albums =  AlbumMapping.getAlbums(fromJson:result ?? [])
+                    self.albums =  AlbumMapping.getAlbums(fromJson:result ?? [],byCollectionId: nil)
+                    self.hideShowMore = false
                     self.tableView.reloadData()
-                    self.indicator.stopAnimating()
-                    self.indicator.hidesWhenStopped = true
+                    //self.indicator.stopAnimating()
+                    //self.indicator.hidesWhenStopped = true
+                    
                 }else{
                 
                 }
@@ -164,6 +184,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     
+        
         searchBar.resignFirstResponder()
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -194,11 +215,10 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                
            default:
                
+                didUserDeleteChar = false
                break
            }
            
-           evaluatePaginationFactor()
-        
         return true
     }
     
@@ -209,12 +229,14 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             isHiddenInitialText = false
             albums.removeAll()
             tableView.reloadData()
+            self.tableView.isHidden = true
             
         }
         else{
             
             isHiddenInitialText = true
             searchAlbums(withName: searchBar.text!, withPage: String(pagination))
+            self.tableView.isHidden = false
             
         }
         
@@ -236,7 +258,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
        self.initialTextView.isHidden = isHiddenInitialText
        configureTableView()
        configureKeyboard()
-       activityIndicatorConfiguration()
+       //activityIndicatorConfiguration()
     }
 
 }
