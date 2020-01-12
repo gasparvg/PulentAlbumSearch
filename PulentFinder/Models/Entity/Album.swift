@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Album{
+class Track{
     
     
     public private(set) var wrapperType : String?
@@ -19,6 +19,7 @@ class Album{
     public private(set) var trackId : String?
     public private(set) var artistName : String?
     public private(set) var collectionName : String?
+    public private(set) var trackName : String?
     public private(set) var collectionCensoredName : String?
     public private(set) var trackCensoredName : String?
     public private(set) var artistViewUrl : String?
@@ -66,6 +67,7 @@ class Album{
         trackId = String(dict.value(forKey: "trackId") as? Int ?? 0)
         artistName = dict.value(forKey: "artistName") as? String
         collectionName = dict.value(forKey: "collectionName") as? String
+        trackName = dict.value(forKey: "trackName") as? String
         collectionCensoredName = dict.value(forKey: "collectionCensoredName") as? String
         trackCensoredName = dict.value(forKey: "trackCensoredName") as? String
         artistViewUrl = dict.value(forKey: "artistViewUrl") as? String

@@ -15,6 +15,8 @@
 		F82714E323CA90B00025EF14 /* AlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82714E123CA90B00025EF14 /* AlbumDetailVC.swift */; };
 		F82714E423CA90B00025EF14 /* AlbumDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F82714E223CA90B00025EF14 /* AlbumDetailVC.xib */; };
 		F8D6BA3323CABFF7004FA543 /* GeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */; };
+		F8D6BA3723CB5C60004FA543 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3523CB5C60004FA543 /* TrackTableViewCell.swift */; };
+		F8D6BA3823CB5C60004FA543 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */; };
 		F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466623CA7F4400611C4E /* AppDelegate.swift */; };
 		F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466823CA7F4400611C4E /* SceneDelegate.swift */; };
 		F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466A23CA7F4400611C4E /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		F82714E123CA90B00025EF14 /* AlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailVC.swift; sourceTree = "<group>"; };
 		F82714E223CA90B00025EF14 /* AlbumDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumDetailVC.xib; sourceTree = "<group>"; };
 		F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralHelpers.swift; sourceTree = "<group>"; };
+		F8D6BA3523CB5C60004FA543 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackTableViewCell.xib; sourceTree = "<group>"; };
 		F8D9466323CA7F4400611C4E /* PulentFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PulentFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D9466623CA7F4400611C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D9466823CA7F4400611C4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		F82714DA23CA8CF50025EF14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6BA3423CB5BC6004FA543 /* TrackTableViewCell */,
 				F82714DB23CA8D060025EF14 /* AlbumTableViewCell */,
 			);
 			path = Views;
@@ -150,6 +155,15 @@
 				F8D6BA3223CABFF7004FA543 /* GeneralHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F8D6BA3423CB5BC6004FA543 /* TrackTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F8D6BA3523CB5C60004FA543 /* TrackTableViewCell.swift */,
+				F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */,
+			);
+			path = TrackTableViewCell;
 			sourceTree = "<group>";
 		};
 		F8D9465A23CA7F4400611C4E = {
@@ -335,6 +349,7 @@
 				F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */,
 				F8D9466E23CA7F4400611C4E /* Main.storyboard in Resources */,
 				F82714DF23CA8D450025EF14 /* AlbumTableViewCell.xib in Resources */,
+				F8D6BA3823CB5C60004FA543 /* TrackTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +441,7 @@
 				F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */,
 				F8D9469223CA87A400611C4E /* Album.swift in Sources */,
 				F82714DE23CA8D450025EF14 /* AlbumTableViewCell.swift in Sources */,
+				F8D6BA3723CB5C60004FA543 /* TrackTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

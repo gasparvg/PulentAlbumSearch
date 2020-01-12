@@ -10,12 +10,12 @@ import Foundation
 
 class AlbumMapping{
 
-    public static func getAlbums(fromJson json:Array<Any>) -> Array<Album>{
+    public static func getAlbums(fromJson json:Array<Any>) -> Array<Track>{
         
-        var albums:Array<Album> = []
+        var albums:Array<Track> = []
         for item in json {
            
-           let album = Album.init(withJson: item as! NSDictionary)
+           let album = Track.init(withJson: item as! NSDictionary)
             albums.append(album)
         }
         

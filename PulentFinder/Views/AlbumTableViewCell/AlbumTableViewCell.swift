@@ -24,7 +24,7 @@ class AlbumTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func configureCell(withAlbum album:Album) {
+    func configureCell(withTrack album:Track) {
         
         self.title.text = album.collectionName
         self.subtitle.text = album.artistName

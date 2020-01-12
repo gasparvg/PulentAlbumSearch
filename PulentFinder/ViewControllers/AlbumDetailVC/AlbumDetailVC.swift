@@ -16,15 +16,84 @@ class AlbumDetailVC: UIViewController {
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
    
-    var albumDetail:Album! = nil
+    @IBOutlet weak var musicTableView: UITableView!
+    
+    var albumDetail:Track! = nil
     var pagination = 20
     var player : AVPlayer?
     var noPreview = false
+    var tracks:Array<Track> = []
+    var hideShowMore = true
+    
+    //MARK: TableView
     
     
-    //MARK: Album preview
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0{
+            return self.tracks.count;
+        }
+        
+        return 0
+    }
+    
+     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+      
+        if section == 1{
+            
+            return 44.0
+        }
+        return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+          
+        if hideShowMore != true{
+            
+            return 2
+        }
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        if indexPath.section == 0{
+            
+            let cell = self.musicTableView.dequeueReusableCell(withIdentifier: "TrackCell") as! TrackTableViewCell
+                   cell.configureCell(withTrack: self.tracks[indexPath.row])
+                   return cell
+        }
+        
+        let cell = self.musicTableView.dequeueReusableCell(withIdentifier: "Cell")!
+        return cell
+    }
     
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+
+        if hideShowMore != true{
+           
+            guard section == 1 else { return nil }
+
+            let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44.0))
+            let doneButton = UIButton(frame: CGRect(x: 0, y: 5, width: 130, height: 34.0))
+            // here is what you should add:
+            doneButton.center = footerView.center
+
+            doneButton.setTitle("Mostrar mas", for: .normal)
+            doneButton.backgroundColor = .lightGray
+            doneButton.layer.cornerRadius = 10.0
+            footerView.addSubview(doneButton)
+            return footerView
+        }
+        
+        return nil
+    }
     
     @IBAction func closeAction(_ sender: Any) {
         
@@ -33,7 +102,7 @@ class AlbumDetailVC: UIViewController {
     }
     
     
-    func loadRadio(radioURL: String) {
+    func loadSong(radioURL: String) {
 
         guard let url = URL.init(string: radioURL) else { return }
         let playerItem = AVPlayerItem.init(url: url)

@@ -19,7 +19,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var hideShowMore = true
     var isHiddenInitialText = false
     
-    var albums:Array<Album> = []
+    var albums:Array<Track> = []
     
     //MARK: - TableView
     
@@ -76,7 +76,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "AlbumCell") as! AlbumTableViewCell
                    //cell.configureCell(withAlbum:self.usersData.serverArray[indexPath.row] as! UserDM)
-                   cell.configureCell(withAlbum: self.albums[indexPath.row])
+                   cell.configureCell(withTrack: self.albums[indexPath.row])
                    return cell
         }
         
