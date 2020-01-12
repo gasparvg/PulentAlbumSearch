@@ -65,7 +65,7 @@
 		F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSearchVC.xib; sourceTree = "<group>"; };
 		F8D9469123CA87A400611C4E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F8D9469423CA87ED00611C4E /* AlbumMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapping.swift; sourceTree = "<group>"; };
-		F8D9469623CA88B900611C4E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		F8D9469623CA88B900611C4E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

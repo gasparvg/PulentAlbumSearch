@@ -11,23 +11,22 @@ import UIKit
 class AlbumDetailVC: UIViewController {
 
     
+    @IBOutlet weak var art100x100ImageView: UIImageView!
     var albumDetail:Album! = nil
+    
+    
+    //MARK: Config
+    
+    func config100x100Image(){
+            
+        SearchAlbumService.getImage(fromUrl: albumDetail.artworkUrl100!){ (success, result, error) in
+                
+            self.art100x100ImageView.image = result
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        config100x100Image()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlbumDetailVC" customModule="PulentFinder" customModuleProvider="target">
             <connections>
+                <outlet property="art100x100ImageView" destination="0l9-Pt-FHd" id="yqn-oB-BbR"/>
                 <outlet property="view" destination="5VM-JQ-XMx" id="0TI-0k-Qa2"/>
             </connections>
         </placeholder>
@@ -24,10 +25,14 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0l9-Pt-FHd">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
+                                    <rect key="frame" x="157" y="50" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="A16-zF-Uzl"/>
+                                        <constraint firstAttribute="width" constant="100" id="nKq-ty-ZdN"/>
+                                    </constraints>
                                 </imageView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0p9-2y-k3q">
-                                    <rect key="frame" x="0.0" y="313.5" width="414" height="582.5"/>
+                                    <rect key="frame" x="0.0" y="150" width="414" height="746"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </tableView>
                             </subviews>
@@ -35,12 +40,10 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="0p9-2y-k3q" secondAttribute="bottom" id="7PV-NV-8qf"/>
                                 <constraint firstItem="0p9-2y-k3q" firstAttribute="centerX" secondItem="0Wa-ax-nnY" secondAttribute="centerX" id="DlA-Sx-X9m"/>
-                                <constraint firstItem="0l9-Pt-FHd" firstAttribute="top" secondItem="0Wa-ax-nnY" secondAttribute="top" id="FfB-tv-UEu"/>
+                                <constraint firstItem="0l9-Pt-FHd" firstAttribute="top" secondItem="0Wa-ax-nnY" secondAttribute="top" constant="50" id="FfB-tv-UEu"/>
                                 <constraint firstItem="0p9-2y-k3q" firstAttribute="top" secondItem="0l9-Pt-FHd" secondAttribute="bottom" id="PEU-Dq-E0V"/>
-                                <constraint firstItem="0l9-Pt-FHd" firstAttribute="width" secondItem="0Wa-ax-nnY" secondAttribute="width" id="Qc7-Sb-maP"/>
                                 <constraint firstItem="0l9-Pt-FHd" firstAttribute="centerX" secondItem="0Wa-ax-nnY" secondAttribute="centerX" id="RGe-UP-Veh"/>
                                 <constraint firstItem="0p9-2y-k3q" firstAttribute="width" secondItem="0Wa-ax-nnY" secondAttribute="width" id="YyZ-Iu-30Y"/>
-                                <constraint firstItem="0l9-Pt-FHd" firstAttribute="height" secondItem="0Wa-ax-nnY" secondAttribute="height" multiplier="0.35" id="tIV-Gc-hur"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUw-ru-Imf">

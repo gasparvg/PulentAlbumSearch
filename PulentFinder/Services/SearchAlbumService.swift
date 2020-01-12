@@ -9,6 +9,7 @@
 import Foundation
 
 import Alamofire
+import AlamofireImage
 
 
 class SearchAlbumService{
@@ -32,6 +33,20 @@ class SearchAlbumService{
             case .failure(let error):
                 completion(false, [] as Array<Any>, error)
          }
+        }
+    }
+    
+    public static func getImage(fromUrl url: String, _ completion: @escaping (_ success: Bool, _ result: UIImage?, _ error: Error?) -> ()){
+     
+        Alamofire.request(url,method: .get).responseImage { response in
+           
+            guard let image = response.result.value else {
+        
+                completion(false, nil, response.error)
+                return
+            }
+            
+            completion(true, image, nil)
         }
     }
 }

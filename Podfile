@@ -8,6 +8,7 @@ target 'PulentFinder' do
   # Pods for PulentFinder
 
     pod 'Alamofire'
+    pod 'AlamofireImage', '~> 3.5'
 
   target 'PulentFinderTests' do
     inherit! :search_paths
