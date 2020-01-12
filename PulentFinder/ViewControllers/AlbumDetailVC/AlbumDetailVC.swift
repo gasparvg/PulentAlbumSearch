@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class AlbumDetailVC: UIViewController {
 
@@ -17,8 +18,38 @@ class AlbumDetailVC: UIViewController {
    
     var albumDetail:Album! = nil
     var pagination = 20
+    var player : AVPlayer?
+    var noPreview = false
+    
+    
+    //MARK: Album preview
+    
+    
+    
+    @IBAction func closeAction(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        player?.pause()
+    }
+    
+    
+    func loadRadio(radioURL: String) {
+
+        guard let url = URL.init(string: radioURL) else { return }
+        let playerItem = AVPlayerItem.init(url: url)
+        player = AVPlayer.init(playerItem: playerItem)
+    }
     
     //MARK: Config
+    
+    func configAlbumPreview(){
+        
+        guard let url = URL.init(string: albumDetail.previewUrl ?? "" ) else {
+            noPreview = true
+            return }
+        let playerItem = AVPlayerItem.init(url: url)
+        player = AVPlayer.init(playerItem: playerItem)
+    }
     
     func config100x100Image(){
             
@@ -34,17 +65,24 @@ class AlbumDetailVC: UIViewController {
         artistNameLabel.text = albumDetail.artistName
     }
     
-    //MARK: Services
-    
     override func viewWillAppear(_ animated: Bool) {
         
-         self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        
+        if noPreview == false{
+            
+            player?.play()
+        }
+        
     }
+    
+    //MARK: life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         config100x100Image()
         configLabels()
+        configAlbumPreview()
     }
 }

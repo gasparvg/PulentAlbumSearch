@@ -28,7 +28,7 @@
                         <outlet property="delegate" destination="-1" id="YeE-sK-6JU"/>
                     </connections>
                 </tableView>
-                <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVu-US-Pcu">
+                <searchBar contentMode="redraw" barStyle="black" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVu-US-Pcu">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

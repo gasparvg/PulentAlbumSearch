@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVKit
 
 class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegate,UISearchDisplayDelegate,UISearchBarDelegate {
     
@@ -15,7 +14,6 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     var indicator = UIActivityIndicatorView()
-    var player : AVPlayer?
     var pagination = 20
     var didUserDeleteChar = false
     var hideShowMore = true
@@ -38,8 +36,9 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         let albumDetailVC = AlbumDetailVC()
         albumDetailVC.albumDetail = self.albums[indexPath.row]
-        self.navigationController?.pushViewController(albumDetailVC, animated: true)
         searchbar.resignFirstResponder()
+        self.navigationController?.present(albumDetailVC, animated: true, completion: nil)
+        
         
     }
     
@@ -172,18 +171,16 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         searchBar.resignFirstResponder()
     }
     
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int){
-        
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+    
+        searchBar.setShowsCancelButton(true, animated: true)
+        return true
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
         
-        
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-        
+        searchBar.setShowsCancelButton(false, animated: true)
+        return true
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {

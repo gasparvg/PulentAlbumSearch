@@ -80,16 +80,54 @@
                         <constraint firstAttribute="trailing" secondItem="0Wa-ax-nnY" secondAttribute="trailing" id="bng-Gh-0ud"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjO-eK-fHf" userLabel="topContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08e-oi-B5h">
+                            <rect key="frame" x="314" y="0.0" width="100" height="120"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="c8j-pE-Doa"/>
+                            </constraints>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="wL9-E8-rhL"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O6L-Mr-x9q" userLabel="closeButton">
+                            <rect key="frame" x="366" y="44" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="5RC-gh-nof"/>
+                                <constraint firstAttribute="height" constant="32" id="8XZ-1r-opZ"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="08e-oi-B5h" secondAttribute="bottom" id="QLn-83-SdR"/>
+                        <constraint firstAttribute="trailing" secondItem="08e-oi-B5h" secondAttribute="trailing" id="VcH-6P-hYJ"/>
+                        <constraint firstItem="O6L-Mr-x9q" firstAttribute="centerY" secondItem="gjO-eK-fHf" secondAttribute="centerY" id="a4Y-kp-hW8"/>
+                        <constraint firstAttribute="height" constant="120" id="nYr-HO-wUu"/>
+                        <constraint firstItem="08e-oi-B5h" firstAttribute="top" secondItem="gjO-eK-fHf" secondAttribute="top" id="y9Y-9P-xn0"/>
+                        <constraint firstAttribute="trailing" secondItem="O6L-Mr-x9q" secondAttribute="trailing" constant="16" id="zu5-cx-Y88"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="gjO-eK-fHf" firstAttribute="width" secondItem="5VM-JQ-XMx" secondAttribute="width" id="5qH-vV-ODd"/>
+                <constraint firstItem="syO-WI-ssh" firstAttribute="trailing" secondItem="gjO-eK-fHf" secondAttribute="trailing" id="7Bk-pu-UdV"/>
+                <constraint firstItem="gjO-eK-fHf" firstAttribute="top" secondItem="5VM-JQ-XMx" secondAttribute="top" id="7Hp-ax-rWf"/>
                 <constraint firstItem="CeE-2w-sTU" firstAttribute="height" secondItem="5VM-JQ-XMx" secondAttribute="height" id="ZCd-DR-BHD"/>
                 <constraint firstItem="CeE-2w-sTU" firstAttribute="centerY" secondItem="syO-WI-ssh" secondAttribute="centerY" id="dRd-Uf-Myx"/>
+                <constraint firstItem="gjO-eK-fHf" firstAttribute="leading" secondItem="syO-WI-ssh" secondAttribute="leading" id="fjr-1b-7XB"/>
                 <constraint firstItem="CeE-2w-sTU" firstAttribute="centerX" secondItem="syO-WI-ssh" secondAttribute="centerX" id="ggL-6d-QkH"/>
                 <constraint firstItem="CeE-2w-sTU" firstAttribute="width" secondItem="5VM-JQ-XMx" secondAttribute="width" id="gvj-go-nUJ"/>
+                <constraint firstItem="gjO-eK-fHf" firstAttribute="centerX" secondItem="syO-WI-ssh" secondAttribute="centerX" id="weK-UG-QMh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="syO-WI-ssh"/>
             <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
     </objects>
+    <resources>
+        <image name="closeIcon" width="64" height="64"/>
+    </resources>
 </document>
