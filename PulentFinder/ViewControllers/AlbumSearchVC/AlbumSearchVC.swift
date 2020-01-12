@@ -19,7 +19,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var pagination = 20
     var didUserDeleteChar = false
     var hideShowMore = true
-    var isHiddenInitialText = true
+    var isHiddenInitialText = false
     
     var albums:Array<Album> = []
     
@@ -118,6 +118,11 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
          tableView.register(UINib(nibName: "AlbumTableViewCell", bundle: nil), forCellReuseIdentifier: "AlbumCell")
     }
     
+    func configureKeyboard(){
+        
+        UITextField.appearance().keyboardAppearance = UIKeyboardAppearance.dark
+        
+    }
     //MARK: Pagination logic
     
     func evaluatePaginationFactor(){
@@ -158,6 +163,10 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     //MARK: Searchbar
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    
+        searchBar.resignFirstResponder()
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     
         searchBar.resignFirstResponder()
@@ -169,17 +178,7 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         
-        if searchBar.text == ""{
-            
-            isHiddenInitialText = false
-            
-        }
-        else{
-            
-            isHiddenInitialText = true
-        }
         
-        self.initialTextView.isHidden = isHiddenInitialText
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -208,8 +207,29 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchAlbums(withName: searchBar.text!, withPage: String(pagination))
+        if searchBar.text == ""{
+            
+            isHiddenInitialText = false
+            albums.removeAll()
+            tableView.reloadData()
+            
+        }
+        else{
+            
+            isHiddenInitialText = true
+            searchAlbums(withName: searchBar.text!, withPage: String(pagination))
+            
+        }
         
+        self.initialTextView.isHidden = isHiddenInitialText
+        
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+         self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -217,8 +237,8 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
        super.viewDidLoad()
        
        self.initialTextView.isHidden = isHiddenInitialText
-       self.navigationController?.navigationBar.isHidden = true
        configureTableView()
+       configureKeyboard()
        activityIndicatorConfiguration()
     }
 

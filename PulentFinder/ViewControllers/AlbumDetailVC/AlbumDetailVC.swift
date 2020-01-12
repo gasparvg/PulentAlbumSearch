@@ -36,9 +36,10 @@ class AlbumDetailVC: UIViewController {
     
     //MARK: Services
     
-    func configMusicTableView(){
+    override func viewWillAppear(_ animated: Bool) {
         
-        
+         self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.backgroundColor = UIColor.black
     }
     
     override func viewDidLoad() {
