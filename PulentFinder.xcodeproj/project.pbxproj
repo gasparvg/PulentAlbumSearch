@@ -19,7 +19,8 @@
 		F8D6BA3823CB5C60004FA543 /* TrackTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D6BA3623CB5C60004FA543 /* TrackTableViewCell.xib */; };
 		F8D6BA3C23CBDA81004FA543 /* PulentFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA3B23CBDA81004FA543 /* PulentFinderTests.swift */; };
 		F8D6BA3E23CBDCF9004FA543 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
-		F8D6BA3F23CBDD00004FA543 /* AlbumMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* AlbumMapping.swift */; };
+		F8D6BA3F23CBDD00004FA543 /* TrackMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* TrackMapping.swift */; };
+		F8D6BA4023CBEAE4004FA543 /* SearchAlbumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82714D823CA89C90025EF14 /* SearchAlbumService.swift */; };
 		F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466623CA7F4400611C4E /* AppDelegate.swift */; };
 		F8D9466923CA7F4400611C4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466823CA7F4400611C4E /* SceneDelegate.swift */; };
 		F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9466A23CA7F4400611C4E /* ViewController.swift */; };
@@ -29,7 +30,7 @@
 		F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9468A23CA859A00611C4E /* AlbumSearchVC.swift */; };
 		F8D9468D23CA859A00611C4E /* AlbumSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */; };
 		F8D9469223CA87A400611C4E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469123CA87A400611C4E /* Album.swift */; };
-		F8D9469523CA87ED00611C4E /* AlbumMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* AlbumMapping.swift */; };
+		F8D9469523CA87ED00611C4E /* TrackMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9469423CA87ED00611C4E /* TrackMapping.swift */; };
 		F8D9469723CA88B900611C4E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F8D9469623CA88B900611C4E /* Podfile */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +74,7 @@
 		F8D9468A23CA859A00611C4E /* AlbumSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchVC.swift; sourceTree = "<group>"; };
 		F8D9468B23CA859A00611C4E /* AlbumSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumSearchVC.xib; sourceTree = "<group>"; };
 		F8D9469123CA87A400611C4E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		F8D9469423CA87ED00611C4E /* AlbumMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapping.swift; sourceTree = "<group>"; };
+		F8D9469423CA87ED00611C4E /* TrackMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackMapping.swift; sourceTree = "<group>"; };
 		F8D9469623CA88B900611C4E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -257,7 +258,7 @@
 		F8D9469023CA877800611C4E /* EntityMapping */ = {
 			isa = PBXGroup;
 			children = (
-				F8D9469423CA87ED00611C4E /* AlbumMapping.swift */,
+				F8D9469423CA87ED00611C4E /* TrackMapping.swift */,
 			);
 			path = EntityMapping;
 			sourceTree = "<group>";
@@ -435,7 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D9469523CA87ED00611C4E /* AlbumMapping.swift in Sources */,
+				F8D9469523CA87ED00611C4E /* TrackMapping.swift in Sources */,
 				F8D9466B23CA7F4400611C4E /* ViewController.swift in Sources */,
 				F8D9466723CA7F4400611C4E /* AppDelegate.swift in Sources */,
 				F8D9468C23CA859A00611C4E /* AlbumSearchVC.swift in Sources */,
@@ -453,9 +454,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D6BA3F23CBDD00004FA543 /* AlbumMapping.swift in Sources */,
+				F8D6BA3F23CBDD00004FA543 /* TrackMapping.swift in Sources */,
 				F8D6BA3C23CBDA81004FA543 /* PulentFinderTests.swift in Sources */,
 				F8D6BA3E23CBDCF9004FA543 /* Album.swift in Sources */,
+				F8D6BA4023CBEAE4004FA543 /* SearchAlbumService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

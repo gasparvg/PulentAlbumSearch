@@ -13,7 +13,6 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet weak var initialTextView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
-    var indicator = UIActivityIndicatorView()
     var pagination = 20
     var didUserDeleteChar = false
     var hideShowMore = true
@@ -31,15 +30,6 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
-    func activityIndicatorConfiguration() {
-        
-        indicator = UIActivityIndicatorView(frame: CGRect(x: self.view.center.x, y: self.view.center.y, width: 40, height: 40))
-        indicator.style = UIActivityIndicatorView.Style.medium
-        indicator.color = UIColor.lightGray
-        indicator.center = self.view.center
-        self.view.addSubview(indicator)
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let albumDetailVC = AlbumDetailVC()
@@ -47,9 +37,6 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         searchbar.resignFirstResponder()
         self.navigationController?.present(albumDetailVC, animated: true, completion: nil)
-        //self.navigationController?.pushViewController(albumDetailVC, animated: true)
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -162,17 +149,12 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             self.tableView.reloadData()
             SearchAlbumService.searchAlbumWithName(withName:GeneralHelpers.replaceSpaces(forTextSearch: name), withPage: page){ (success, result, error) in
             
-                //self.indicator.startAnimating()
-                //self.indicator.backgroundColor = UIColor.lightGray
-                
                 if success && error == nil {
                  
-                    self.albums =  AlbumMapping.getAlbums(fromJson:result ?? [],byCollectionId: nil)
+                    self.albums =  TrackMapping.getTracks(fromJson:result ?? [],byCollectionId: nil)
                     self.hideShowMore = false
                     self.tableView.reloadData()
-                    //self.indicator.stopAnimating()
-                    //self.indicator.hidesWhenStopped = true
-                    
+                
                 }else{
                 
                 }
@@ -258,7 +240,6 @@ class AlbumSearchVC: UIViewController, UITableViewDataSource, UITableViewDelegat
        self.initialTextView.isHidden = isHiddenInitialText
        configureTableView()
        configureKeyboard()
-       //activityIndicatorConfiguration()
     }
 
 }

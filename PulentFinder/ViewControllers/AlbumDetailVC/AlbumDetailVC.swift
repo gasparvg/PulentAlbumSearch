@@ -21,7 +21,6 @@ class AlbumDetailVC: UIViewController,UITableViewDataSource, UITableViewDelegate
     
     var selectedRow = false
     var selectedRowValue:Int?
-    var indicator = UIActivityIndicatorView()
    
     @IBOutlet weak var musicTableView: UITableView!
     
@@ -175,12 +174,9 @@ class AlbumDetailVC: UIViewController,UITableViewDataSource, UITableViewDelegate
         
             SearchAlbumService.searchAlbumWithName(withName:GeneralHelpers.replaceSpaces(forTextSearch: albumDetail.collectionName!), withPage: String(pagination)){ (success, result, error) in
             
-                self.indicator.startAnimating()
-                self.indicator.backgroundColor = UIColor.lightGray
-                
                 if success && error == nil {
                  
-                    self.tracks =  AlbumMapping.getAlbums(fromJson:result ?? [],byCollectionId: self.albumDetail.collectionId)
+                    self.tracks =  TrackMapping.getTracks(fromJson:result ?? [],byCollectionId: self.albumDetail.collectionId)
                    
                     
                     if self.tracks.count == 0{
@@ -193,8 +189,6 @@ class AlbumDetailVC: UIViewController,UITableViewDataSource, UITableViewDelegate
                         
                         self.hideShowMore = false
                         self.musicTableView.reloadData()
-                        self.indicator.stopAnimating()
-                        self.indicator.hidesWhenStopped = true
                         self.resizeTable()
                     }
                 }else{

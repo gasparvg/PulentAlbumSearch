@@ -8,9 +8,9 @@
 
 import Foundation
 
-class AlbumMapping{
+class TrackMapping{
 
-    public static func getAlbums(fromJson json:Array<Any>, byCollectionId collectionId:String?) -> Array<Track>{
+    public static func getTracks(fromJson json:Array<Any>, byCollectionId collectionId:String?) -> Array<Track>{
         
         var albums:Array<Track> = []
         for item in json {
